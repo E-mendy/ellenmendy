@@ -1,0 +1,77 @@
+---
+title: 'R Assignment #1'
+author: "Floriann Deepika, Ellen Mendy, Karan Saeedi"
+output:
+  pdf_document:
+    number_sections: yes
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Include packages here
+#Package to read csv from url (https)
+#install.packages("readr")
+library (readr)
+```
+
+# COVID-19 Data Sources
+# Data Source : JHU(https://www.jhu.edu/) Data Set by OWID - Our World in Data - https://ourworldindata.org/
+# Data Source : Git Hub of OWID : Auto update from JHU
+# Worldwide data for each countries - daily auto extracted from JHU(https://github.com/owid/covid-19-data/tree/master/public/data/latest)
+
+```{r data}
+# Your script to download and load the data into data frames
+urlfile= "https://github.com/owid/covid-19-data/raw/master/public/data/latest/owid-covid-latest.csv"
+
+#read Data Source from url to a data frame
+sourceData<-read_csv(url(urlfile))
+
+#write data in local disk for reference
+#write.csv(sourceData,"file path")
+
+#Basic EDA
+summary(sourceData)
+spec(sourceData)
+head(sourceData)
+```
+
+
+# Variables
+
+*Your five selected variables and descriptions*
+#choosing only the required variables
+c19Data <- subset(sourceData, select=c("location","last_updated_date","total_cases","new_cases","new_cases_smoothed","total_deaths","new_deaths","new_deaths_smoothed","total_cases_per_million","new_cases_per_million","new_tests","new_tests_per_thousand","positive_rate","people_fully_vaccinated_per_hundred"))
+head(c19Data)
+#Varable1 - new_cases
+#Variable2 - new_deaths
+#Variable3 - new_cases_per_million
+#variable4 - positivity rate
+#variable5 - people_fully_vaccinated_per_hundred
+
+# First exploration
+
+```{r variable1}
+# First exploration
+```
+
+```{r variable2}
+# First exploration
+```
+
+```{r variable3}
+# First exploration
+```
+
+```{r variable4}
+# First exploration
+```
+
+```{r variable5}
+# First exploration
+```
+
+# Questions
+
+*Your three questions*
